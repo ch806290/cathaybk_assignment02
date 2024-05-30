@@ -37,6 +37,9 @@ class solution:
         pattern = r'^[\d]+$'
         if not re.match(pattern, str1):
             raise InvalidInputException('輸入的內容摻雜了非數字文字，請學生再檢查一次！')
+        
+        if len(str1) < 1 or len(str1) > 20:
+            raise InvalidInputException('輸入的內容長度應該介於1~20，請學生再檢查一次！')
 
 
         for i in tempList:
@@ -70,7 +73,8 @@ def main():
     print(s.verify_math_rule('20004'))
     print(s.verify_math_rule('222'))
 
-    print(s.verify_math_rule('-22'))
+    #print(s.verify_math_rule('-22'))
+    print(s.verify_math_rule('1234567890123456789011'))
 
 
 if __name__ =='__main__':
